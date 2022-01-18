@@ -70,7 +70,7 @@ if links:
             handler.write(icon_data.content)
 
         css += [f"a[href*='{link}']:after {{"]
-        css += [f"  background-image: url('/favicons/{icon_filename}')"]
+        css += [f"  background-image: url('/favicons/{icon_filename}');"]
         css += ["  padding-left: 16px;"]
         css += ["}"]
 
