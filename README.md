@@ -11,8 +11,8 @@ This expects https://github.com/mat/besticon to be running locally at http://loc
 1. 
     ```sh
     python3 get_favicons.py \
-      path/to/dir/with/md/files \
-      path/to/dir/to/save/icons/to \
-      path/to/file/to/write/css/to \
-      www.example.com
+      --markdown_directory=path/to/dir/with/md/files \
+      --icon_directory=path/to/dir/to/save/icons/to \
+      --favicon_css_outfile_path=path/to/file/to/write/css/to \
+      --your_site_url=www.example.com
     ```
