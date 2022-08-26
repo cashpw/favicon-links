@@ -10,10 +10,10 @@ import requests
 import urllib
 
 parser = argparse.ArgumentParser()
-parser.add_argument("markdown_directory", help="Path to directory with HTML files to scan for links.")
-parser.add_argument("icon_directory", help="Path to directory to store downloaded icons in.")
-parser.add_argument("favicon_css_outfile_path", help="Path to write the CSS to.")
-parser.add_argument("your_site_url", help="Your site's url (without HTTP(s)).")
+parser.add_argument("--markdown_directory", help="Path to directory with HTML files to scan for links.", required=True)
+parser.add_argument("--icon_directory", help="Path to directory to store downloaded icons in.", required=True)
+parser.add_argument("--favicon_css_outfile_path", help="Path to write the CSS to.", required=True)
+parser.add_argument("--your_site_url", help="Your site's url (without HTTP(s)).", required=True)
 args = parser.parse_args()
 
 ICONSERVER_URL="http://localhost:8080"
@@ -52,7 +52,6 @@ if links:
     css += ["  background-size: 16px 16px !important;"]
     css += ["  content: '';"]
     css += ["  height: 16px;"]
-    css += ["  margin-left: 0.5ch;"]
     css += ["  vertical-align: middle;"]
     css += ["  width: 16px;"]
     css += ["}"]
@@ -70,6 +69,7 @@ if links:
         css += [f"a[href*='{link}']:after {{"]
         css += [f"  background-image: url('/favicons/{icon_filename}');"]
         css += ["  padding-left: 16px;"]
+        css += ["  margin-left: 0.5ch;"]
         css += ["}"]
 
     with open(f"{args.favicon_css_outfile_path}", 'w') as css_file:
