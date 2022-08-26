@@ -38,7 +38,8 @@ def get_icon_query_url(link, size="16..16..100"):
 
 os.chdir(args.markdown_directory)
 links = []
-for filename in glob.glob("*.md"):
+markdown_files = glob.glob("*.md")
+for filename in markdown_files:
     with open(filename, 'r') as f:
         content = f.read()
         baselinks = get_baselinks(content)
@@ -58,7 +59,8 @@ if links:
 
 
     unique_links = sorted(list(set(links)))
-    for link in unique_links:
+    for i, link in enumerate(unique_links, start=1):
+        print(f"Processing {i}/{len(unique_links)}: {link}")
         netloc = urllib.parse.urlparse(link).netloc
         icon_data = requests.get(get_icon_query_url(link))
         extension = pathlib.Path(urllib.parse.urlparse(icon_data.url).path).suffix
