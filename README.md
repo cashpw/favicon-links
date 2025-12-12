@@ -1,8 +1,6 @@
-# Basic Favicon Links
+# Favicon links
 
-An alternative to [favicon-links](https://github.com/cashweaver/favicon-links) which doesn't need to pull favicons on the fly.
-
-This expects https://github.com/mat/besticon to be running locally at http://localhost:8080.
+An alternative to [dynamic-favicon-links](https://github.com/cashpw/dynamic-favicon-links) which doesn't need to pull favicons on the fly.
 
 ## Usage
 
@@ -14,5 +12,6 @@ This expects https://github.com/mat/besticon to be running locally at http://loc
       --markdown_directory=path/to/dir/with/md/files \
       --icon_directory=path/to/dir/to/save/icons/to \
       --favicon_css_outfile_path=path/to/file/to/write/css/to \
+      --iconserver=http://localhost:8080 \
       --your_site_url=www.example.com
     ```
