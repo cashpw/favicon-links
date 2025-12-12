@@ -1,9 +1,9 @@
 :PROPERTIES:
-:LAST_MODIFIED: [2025-12-11 Thu 16:39]
+:LAST_MODIFIED: [2025-12-11 Thu 16:40]
 :END:
 #+title: Favicon links
 
-An alternative to [[github:cashpw/dynamic-favicon-links][cashpw/dynamic-favicon-links]] which doesn't need to pull favicons on the fly.
+An alternative to [[https://github.com/cashpw/dynamic-favicon-links][cashpw/dynamic-favicon-links]] which doesn't need to pull favicons on the fly.
 
 Running =get_favicons.py= will:
 
