@@ -1,0 +1,27 @@
+:PROPERTIES:
+:LAST_MODIFIED: [2025-12-11 Thu 16:39]
+:END:
+#+title: Favicon links
+
+An alternative to [[github:cashpw/dynamic-favicon-links][cashpw/dynamic-favicon-links]] which doesn't need to pull favicons on the fly.
+
+Running =get_favicons.py= will:
+
+1. Find all links in the provided =markdown_directory=
+2. Download favicons for those links (skips the ones you already have in =icon_directory=)
+3. Write CSS to =favicon_css_output_path= which will show the appropriate favicon =:after= links
+
+* Usage
+
+1. =pip install -r requirements.txt=
+2. Start the [[https://github.com/mat/besticon][iconserver]]
+3. Run =get_favicons.py=:
+
+   #+begin_src python :results output
+   python3 get_favicons.py \
+     --markdown_directory=path/to/dir/with/md/files \
+     --icon_directory=path/to/dir/to/save/icons/to \
+     --favicon_css_outfile_path=path/to/file/to/write/css/to \
+     --iconserver=http://localhost:8080 \
+     --your_site_url=www.example.com
+   #+end_src
